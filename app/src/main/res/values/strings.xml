@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">扫码关联</string>
+    <string name="title_scan">扫码 / 手动输入</string>
+    <string name="hint_input">输入内容或扫码添加</string>
+    <string name="btn_scan">扫码</string>
+    <string name="btn_add">添加</string>
+    <string name="title_list">内容列表</string>
+    <string name="btn_generate">批量生成二维码</string>
+</resources>

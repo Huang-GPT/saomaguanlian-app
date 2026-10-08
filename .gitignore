@@ -1,0 +1,23 @@
+*.iml
+.gradle
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+/tmp/
+
+# Build outputs
+app/build/
+build/
+*.apk
+*.aab
+
+# Aapt2 wrapper (build-only, not source)
+aapt2/
+
+# OS
+Thumbs.db

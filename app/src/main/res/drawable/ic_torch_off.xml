@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="#FFFFFF">
+    <!-- 手电筒未开启：斜杠 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M9,2h6v3l-1.5,2.5V21h-3V7.5L9,5V2z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M3.3,2.3L21.7,20.7l-1.4,1.4L1.9,3.7L3.3,2.3z" />
+</vector>

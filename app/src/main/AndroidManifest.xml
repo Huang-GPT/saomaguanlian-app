@@ -39,5 +39,13 @@
             android:screenOrientation="portrait"
             tools:replace="android:screenOrientation" />
 
+        <!-- 自定义扫码页：闪光灯开关 + 点击对焦 -->
+        <activity
+            android:name=".ScanActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:replace="android:screenOrientation"
+            android:theme="@style/zxing_CaptureTheme" />
+
     </application>
 </manifest>

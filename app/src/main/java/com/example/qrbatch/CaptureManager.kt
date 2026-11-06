@@ -26,6 +26,7 @@ class CaptureManager(private val activity: android.app.Activity) {
     fun startScan(prompt: String = "将二维码/条形码对准取景框") {
         try {
             val integrator = IntentIntegrator(activity)
+            integrator.setCaptureActivity(ScanActivity::class.java)
             integrator.setOrientationLocked(true)
             integrator.setPrompt(prompt)
             integrator.setBeepEnabled(true)

@@ -7,4 +7,7 @@
     <string name="btn_add">添加</string>
     <string name="title_list">内容列表</string>
     <string name="btn_generate">批量生成二维码</string>
+    <string name="tap_to_focus">点击取景框手动对焦</string>
+    <string name="torch_on">关闭闪光灯</string>
+    <string name="torch_off">打开闪光灯</string>
 </resources>

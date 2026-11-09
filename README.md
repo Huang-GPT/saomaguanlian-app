@@ -5,6 +5,9 @@
 ## 功能
 
 - **扫码识别**：相机扫描二维码（QR）和常见一维条形码（EAN-13/8、UPC-A/E、Code-128/39/93、ITF）
+- **连续对焦**：扫码页默认开启连续对焦 + 曝光 + 测光，画面始终清晰
+- **点击对焦**：点击取景框任意位置手动对焦，按点击位置设置焦点区域并立即触发一次自动对焦
+- **闪光灯**：扫码页右上角手动开关（暗光环境下补光）
 - **批量生成**：根据内容批量生成 QR / 条形码图片，**主项 + 关联子项** 自动合成到一张大图
 - **关联子项**：长按主项打开详情页，添加 / 扫码关联子项
 - **重复检测**：子项有重复时自动用半透明底色标记，不同重复组用不同颜色区分
@@ -20,6 +23,7 @@
 - **首页**：扫码按钮 + 手动输入 + 列表展示
 - **详情页**：编辑主项 / 手动添加子项 / 扫码关联子项
 - **列表展开**：点击主项展开查看子项；长按编辑
+- **扫码页**：取景框 + 右上角闪光灯开关 + 点击对焦提示
 
 ## 技术栈
 
@@ -43,6 +47,7 @@
 │       ├── java/com/example/qrbatch/
 │       │   ├── MainActivity.kt            # 主页
 │       │   ├── ItemDetailActivity.kt      # 关联子项详情页
+│       │   ├── ScanActivity.kt            # 自定义扫码页（闪光灯 + 点击对焦）
 │       │   ├── CaptureManager.kt          # 扫码封装（多码制）
 │       │   ├── QrItem.kt                  # 数据模型（含 format）
 │       │   ├── ItemStore.kt               # 跨 Activity 共享数据
@@ -54,6 +59,7 @@
 │       │   └── ...
 │       └── res/
 │           ├── drawable/bg_swipe_delete.xml
+│           ├── drawable/ic_torch_{on,off}.xml   # 闪光灯图标
 │           ├── layout/                    # activity_*.xml + row_*.xml
 │           ├── mipmap-*/ic_launcher.png   # 应用图标（5 个 density）
 │           ├── mipmap-anydpi-v26/         # 自适应图标
@@ -115,6 +121,7 @@ adb shell am start -n com.example.qrbatch/.MainActivity
 
 - 在某些设备/系统版本上 ZXing-Android-Embedded 的 `IntentIntegrator` 已被标记 `@Deprecated`，但功能仍正常
 - 长按主项进入详情页：详情页不直接支持修改主项文本（只能添加/删除/扫码关联子项），如需改主项文本需要重建条目
+- 扫码页的点击对焦需要反射访问 ZXing 内部字段（`CameraManager.camera` / `CameraThread.enqueue`），若库升级导致字段改名会自动降级为「仅连续对焦」，不影响扫码
 
 ## 路线图
 
@@ -122,6 +129,7 @@ adb shell am start -n com.example.qrbatch/.MainActivity
 - [ ] iOS 版（评估中）
 - [ ] 列表拖拽排序
 - [ ] 历史记录 / 草稿自动保存
+- [ ] 条形码内容格式校验（EAN-13 位数等）与友好提示
 
 ## 许可证
 
